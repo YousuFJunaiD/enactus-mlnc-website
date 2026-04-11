@@ -1,0 +1,123 @@
+.team-hero::before {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 22%),
+    radial-gradient(circle at 75% 20%, rgba(245, 166, 35, 0.2), transparent 18%),
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.03));
+}
+
+.team-update-notice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.15rem;
+  margin-bottom: var(--spacing-6);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: var(--border-light);
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.team-tier {
+  margin-bottom: var(--spacing-8);
+}
+
+.team-tier:last-child {
+  margin-bottom: 0;
+}
+
+.team-tier-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--spacing-4);
+}
+
+.team-tier-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.5rem;
+  width: 2.75rem;
+  height: 3px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--color-primary-yellow), #ffd27a);
+}
+
+.team-grid,
+.mentors-grid {
+  align-items: stretch;
+}
+
+.team-member-card {
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--radius-xl);
+  border: var(--border-light);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.team-member-card:hover,
+.team-member-card:focus-within {
+  transform: translateY(-0.35rem);
+  box-shadow: var(--shadow-md);
+}
+
+.avatar-placeholder {
+  width: clamp(5rem, 12vw, 6.25rem);
+  aspect-ratio: 1;
+  margin: 0 auto var(--spacing-3);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(245, 166, 35, 0.2), transparent 36%),
+    var(--color-off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-placeholder::after,
+.text-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  animation: shimmer 2.2s infinite;
+}
+
+.text-placeholder {
+  position: relative;
+  width: 80%;
+  height: 0.95rem;
+  margin: 0 auto 0.6rem;
+  border-radius: 999px;
+  background: var(--color-off-white);
+  overflow: hidden;
+}
+
+.text-placeholder.short {
+  width: 52%;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 48rem) {
+  .team-grid,
+  .mentors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 30rem) {
+  .team-grid,
+  .mentors-grid {
+    grid-template-columns: 1fr;
+  }
+}

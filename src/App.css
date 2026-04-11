@@ -1,0 +1,8 @@
+.app-wrapper {
+  position: relative;
+  isolation: isolate;
+}
+
+.main-content {
+  position: relative;
+}

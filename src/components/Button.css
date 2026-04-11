@@ -1,0 +1,91 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.5rem;
+  padding: 0.95rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: none;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline-offset: 4px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ffc559 0%, var(--color-primary-yellow) 100%);
+  color: var(--color-primary-black);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  box-shadow: 0 16px 32px rgba(245, 166, 35, 0.26);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-primary-black);
+  border-color: rgba(17, 17, 17, 0.14);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--color-primary-black);
+  color: var(--color-white);
+  border-color: var(--color-primary-black);
+}
+
+.btn-subtle,
+.btn-outline {
+  background: rgba(17, 17, 17, 0.04);
+  color: var(--color-primary-black);
+  border-color: rgba(17, 17, 17, 0.08);
+}
+
+.btn-subtle:hover,
+.btn-subtle:focus-visible,
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: rgba(245, 166, 35, 0.12);
+  border-color: rgba(245, 166, 35, 0.32);
+}
+
+.section-bg-dark .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.section-bg-dark .btn-secondary:hover,
+.section-bg-dark .btn-secondary:focus-visible {
+  background: var(--color-white);
+  color: var(--color-primary-black);
+}
+
+@media (max-width: 40rem) {
+  .btn {
+    width: 100%;
+  }
+}

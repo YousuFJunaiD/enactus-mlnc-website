@@ -1,0 +1,112 @@
+.achievements-hero::before {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 24%),
+    radial-gradient(circle at 78% 20%, rgba(245, 166, 35, 0.24), transparent 20%),
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.03));
+}
+
+.hero-achievement {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: var(--border-dark);
+  background:
+    radial-gradient(circle at top right, rgba(245, 166, 35, 0.18), transparent 32%),
+    linear-gradient(145deg, #111111, #1b1a19);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-achievement-content {
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+.hero-achievement-content h2 {
+  color: var(--color-white);
+}
+
+.hero-achievement-visual {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent),
+    rgba(255, 255, 255, 0.03);
+}
+
+.hero-achievement-visual .placeholder-image {
+  width: 100%;
+  min-height: 18rem;
+  color: rgba(255, 255, 255, 0.54);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.achievement-list {
+  margin-top: var(--spacing-3);
+  padding-left: 1.35rem;
+}
+
+.achievement-list li {
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.achievement-list li::before {
+  content: '\2022';
+  position: absolute;
+  left: -1rem;
+  color: var(--color-primary-yellow);
+}
+
+.achievement-card,
+.metric-box,
+.press-logo-card {
+  text-align: left;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  margin: clamp(2.5rem, 6vw, 4rem) 0;
+  background: linear-gradient(90deg, transparent, rgba(17, 17, 17, 0.14), transparent);
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, rgba(245, 166, 35, 0.08), rgba(255, 255, 255, 0.95)),
+    var(--color-off-white);
+}
+
+.press-logo-card {
+  text-align: center;
+}
+
+@media (max-width: 64rem) {
+  .hero-achievement {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-achievement-visual .placeholder-image {
+    min-height: 14rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .metric-grid,
+  .press-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 30rem) {
+  .metric-grid,
+  .press-grid {
+    grid-template-columns: 1fr;
+  }
+}

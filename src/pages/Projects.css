@@ -1,0 +1,10 @@
+.projects-page .page-hero {
+  padding-block: clamp(5.5rem, 10vw, 8rem);
+}
+
+.projects-hero::before {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 24%),
+    radial-gradient(circle at 78% 22%, rgba(245, 166, 35, 0.2), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 18%);
+}

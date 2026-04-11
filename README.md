@@ -1,23 +1,16 @@
-# enactus-mlnc-website
-Official website redevelopment project for Enactus MLNC under MOU collaboration. Built and maintained by the Omnimate team.
-# Enactus MLNC Website
+# React + Vite
 
-## 📌 Project Overview
-This repository contains the redevelopment of the official Enactus MLNC website as part of an MOU collaboration.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 👨‍💻 Team
-- Your Team Name (or Org Name)
-- Contributors: (add names later)
+Currently, two official plugins are available:
 
-## 🚀 Tech Stack
-- Frontend: React / Vite / Next.js
-- Backend: (if any)
-- Database: (if any)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🎯 Goal
-To build a modern, responsive, and scalable website for Enactus MLNC.
+## React Compiler
 
-## 📂 Structure
-(To be updated)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🔗 Live (Coming Soon)
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

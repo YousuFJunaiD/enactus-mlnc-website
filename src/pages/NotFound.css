@@ -1,0 +1,26 @@
+.not-found-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: var(--spacing-2);
+}
+
+.not-found-actions {
+  display: flex;
+  gap: var(--spacing-3);
+  justify-content: center;
+  margin-top: var(--spacing-6);
+}
+
+@media (max-width: 480px) {
+  .not-found-actions {
+    flex-direction: column;
+  }
+}
