@@ -1,6 +1,10 @@
 import { ArrowLeft, Camera } from 'lucide-react';
 import Button from '../../components/Button';
 import './ProjectPage.css';
+import toteStar from '../../assets/sneh-tote-starboy.jpeg';
+import toteTaylor from '../../assets/sneh-tote-taylor.jpeg';
+import toteSaturn from '../../assets/sneh-tote-saturn.jpeg';
+import totesDisplay from '../../assets/sneh-totes-display.jpeg';
 
 export default function ProjectSneh() {
   return (
@@ -39,13 +43,13 @@ export default function ProjectSneh() {
           <div className="content-block">
             <h2 className="heading-md border-bottom pb-2">Our Products</h2>
             <div className="image-gallery mt-4">
-              <div className="gallery-img-placeholder" style={{backgroundColor: '#e6e6e6'}}>
-                Tote Bags (Real Photos)
-              </div>
-              <div className="gallery-img-placeholder">Sanitary Napkins</div>
-              <div className="gallery-img-placeholder">Cloth Diapers</div>
+              <img src={toteStar} alt="Handcrafted tote bag by Project SNEH" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',aspectRatio:'1'}} />
+              <img src={toteTaylor} alt="Tote bag by Project SNEH artisans" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',aspectRatio:'1'}} />
+              <img src={toteSaturn} alt="Saturn tote bag by Project SNEH" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',aspectRatio:'1'}} />
             </div>
-            <p className="text-center mt-3 text-secondary">Products include Tote Bags, Sanitary Napkins, Cloth Diapers, and Ecozyme.</p>
+            <div className="mt-3">
+              <img src={totesDisplay} alt="Tote bags display at sales event" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',maxHeight:'360px'}} />
+            </div>
           </div>
 
           <div className="content-block">

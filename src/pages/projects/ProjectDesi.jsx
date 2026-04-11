@@ -1,6 +1,7 @@
 import { ArrowLeft, Camera } from 'lucide-react';
 import Button from '../../components/Button';
 import './ProjectPage.css';
+import seminar1 from '../../assets/desi-seminar-1.jpeg';
 
 export default function ProjectDesi() {
   return (
@@ -94,6 +95,9 @@ export default function ProjectDesi() {
               <li>Participated in Business Plan competition at SGNDKC (January 2026).</li>
               <li>Featured in Case competition at IIT Roorkee (February 2026).</li>
             </ul>
+            <div className="mt-4">
+              <img src={seminar1} alt="Enactus MLNC seminar with Heads Up For Tails" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',maxHeight:'400px'}} />
+            </div>
           </div>
           
           <div className="content-block">
