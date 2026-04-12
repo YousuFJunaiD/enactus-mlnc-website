@@ -41,7 +41,7 @@ export default function Home() {
                 </div>
                 <div className="hero-impact-stat">
                   <span className="hero-impact-number">4</span>
-                  <span className="hero-impact-desc">Active Projects</span>
+                  <span className="hero-impact-desc">Projects</span>
                 </div>
                 <div className="hero-impact-stat">
                   <span className="hero-impact-number">&#8377;10L+</span>
