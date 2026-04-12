@@ -8,12 +8,14 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition:
-    box-shadow 200ms ease,
-    border-color 200ms ease;
+    box-shadow 300ms ease,
+    background-color 300ms ease,
+    padding 300ms ease;
 }
 
 .navbar-scrolled {
-  box-shadow: 0 2px 16px rgba(17, 17, 17, 0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  padding-block: 0.6rem;
   border-bottom-color: #DDDDDD;
 }
 
@@ -55,8 +57,9 @@
   padding-inline: 1rem;
   border-radius: 999px;
   color: var(--color-text-body);
-  font-size: 0.96rem;
-  font-weight: 700;
+  font-size: clamp(0.82rem, 1vw, 0.96rem);
+  font-weight: 600;
+  font-family: var(--font-body);
   letter-spacing: 0.01em;
 }
 
@@ -73,17 +76,27 @@
   transition: transform var(--transition-base);
 }
 
-.nav-link:hover,
-.nav-link:focus-visible,
 .nav-link.active {
   color: var(--color-primary-black);
   background: rgba(245, 166, 35, 0.09);
 }
 
-.nav-link:hover::after,
-.nav-link:focus-visible::after,
-.nav-link.active::after {
-  transform: scaleX(1);
+@media (hover: hover) {
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    color: var(--color-primary-black);
+    background: rgba(245, 166, 35, 0.09);
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .nav-link.active::after {
+    transform: scaleX(1);
+  }
+
+  .mobile-menu-btn:hover {
+    background: rgba(245, 166, 35, 0.09);
+  }
 }
 
 .mobile-menu-btn {
@@ -113,6 +126,8 @@
   .mobile-menu-btn {
     display: inline-flex;
   }
+
+  .nav-link {
     min-height: 3rem;
     width: 100%;
     justify-content: flex-start;
@@ -134,7 +149,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 280ms ease, visibility 280ms ease;
+    transition: opacity 300ms ease, visibility 300ms ease;
     z-index: 998;
   }
 
@@ -159,7 +174,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: transform 280ms ease, opacity 280ms ease, visibility 280ms ease;
+    transition: transform 300ms ease, opacity 300ms ease, visibility 300ms ease;
   }
 
   .nav-links.open {

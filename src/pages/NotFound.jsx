@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import Button from '../components/Button';
 import './NotFound.css';
 
 export default function NotFound() {
+  useEffect(() => {
+    document.title = 'Page Not Found | Enactus MLNC';
+  }, []);
   return (
     <div className="not-found-page section-bg-dark">
       <div className="container text-center">

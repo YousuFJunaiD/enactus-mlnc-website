@@ -142,8 +142,13 @@
   background:
     linear-gradient(180deg, rgba(245, 166, 35, 0.08), rgba(255, 255, 255, 0.95)),
     var(--color-off-white);
-  opacity: 0;
-  transform: translateY(28px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .metric-box {
+    opacity: 0;
+    transform: translateY(28px);
+  }
 }
 
 .metric-box h3 {

@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import { ArrowLeft, Camera } from 'lucide-react';
 import Button from '../../components/Button';
 import './ProjectPage.css';
 import seminar1 from '../../assets/desi-seminar-1.jpeg';
 
 export default function ProjectDesi() {
+  useEffect(() => {
+    document.title = 'Project DESI — Animal Welfare & Social Enterprise | Enactus MLNC';
+  }, []);
   return (
     <div className="project-detail-page">
       <section className="project-hero section-bg-dark">
@@ -96,7 +100,7 @@ export default function ProjectDesi() {
               <li>Featured in Case competition at IIT Roorkee (February 2026).</li>
             </ul>
             <div className="mt-4">
-              <img src={seminar1} alt="Enactus MLNC seminar with Heads Up For Tails" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',maxHeight:'400px'}} />
+              <img src={seminar1} alt="Enactus MLNC seminar with Heads Up For Tails" loading="lazy" decoding="async" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',maxHeight:'400px'}} />
             </div>
           </div>
           

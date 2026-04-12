@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { ArrowLeft, Camera } from 'lucide-react';
 import Button from '../../components/Button';
 import './ProjectPage.css';
 
 export default function ProjectBiothene() {
+  useEffect(() => {
+    document.title = 'Project BIOTHENE — Biodegradable Bags | Enactus MLNC';
+  }, []);
   return (
     <div className="project-detail-page">
       <section className="project-hero section-bg-dark">

@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import Card from '../components/Card';
 import PageHero from '../components/PageHero';
 import SectionContainer from '../components/SectionContainer';
 import './Achievements.css';
 
 export default function Achievements() {
+  useEffect(() => {
+    document.title = 'Achievements | Enactus MLNC';
+  }, []);
   return (
     <div className="achievements-page">
       <PageHero

@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import PageHero from '../components/PageHero';
 import SectionContainer from '../components/SectionContainer';
 import './About.css';
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'About Us | Enactus MLNC';
+  }, []);
   return (
     <div className="about-page">
       <PageHero
@@ -67,47 +71,50 @@ export default function About() {
             <h2 className="heading-lg">Our Journey</h2>
             <p className="text-lg section-subtitle">From a small idea to a decade of impact — milestones that define us.</p>
           </div>
-          <div className="timeline">
-            <div className="timeline-item reveal-on-scroll">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <span className="timeline-year text-yellow font-bold">2014</span>
-                <h3 className="heading-sm">Chapter Founded</h3>
-                <p className="text-sm">Enactus MLNC established at Motilal Nehru College, University of Delhi, with a small team of passionate students.</p>
+          <div className="timeline-simple">
+            <div className="timeline-item-simple">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content-simple">
+                <span className="timeline-year">2014</span>
+                <h3>Founded at Motilal Nehru College</h3>
+                <p>Enactus MLNC established at Motilal Nehru College, University of Delhi — beginning a 14-year journey of social entrepreneurship.</p>
               </div>
             </div>
-            <div className="timeline-item reveal-on-scroll">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <span className="timeline-year text-yellow font-bold">2018</span>
-                <h3 className="heading-sm">National Recognition</h3>
-                <p className="text-sm">First major national competition appearance with Project DESI, receiving significant media attention from HT City and ANI News.</p>
+            <div className="timeline-item-simple">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content-simple">
+                <span className="timeline-year">2025</span>
+                <h3>Project TISSERA Launched</h3>
+                <p>Transforming textile waste into sustainable value-added products while empowering women from underprivileged communities.</p>
               </div>
             </div>
-            <div className="timeline-item reveal-on-scroll">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <span className="timeline-year text-yellow font-bold">2022</span>
-                <h3 className="heading-sm">International Breakthrough</h3>
-                <p className="text-sm">Project SNEH achieved its first international sale, marking a milestone in cross-border social entrepreneurship.</p>
+            <div className="timeline-item-simple">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content-simple">
+                <span className="timeline-year">2025</span>
+                <h3>Project BIOTHENE Commenced</h3>
+                <p>MoU signed with Packaging Club for biodegradable bag manufacturing using cornstarch — addressing plastic pollution.</p>
               </div>
             </div>
-            <div className="timeline-item reveal-on-scroll">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <span className="timeline-year text-yellow font-bold">2023</span>
-                <h3 className="heading-sm">Environmental Expansion</h3>
-                <p className="text-sm">Launched Project BIOTHENE and Project TISSERA, expanding our portfolio to address plastic pollution and textile waste.</p>
+            <div className="timeline-item-simple">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content-simple">
+                <span className="timeline-year">2025–26</span>
+                <h3>First International Sale in Enactus India</h3>
+                <p>Project SNEH exported 50+ handcrafted tote bags to Canada in collaboration with Enactus UPEI and University of Calgary — a historic first in Enactus India history.</p>
               </div>
             </div>
-            <div className="timeline-item reveal-on-scroll">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <span className="timeline-year text-yellow font-bold">2025</span>
-                <h3 className="heading-sm">A Decade of Impact</h3>
-                <p className="text-sm">Celebrating 10+ years, 10,000+ lives impacted, and continued growth with an expanded team and multi-project portfolio.</p>
+            <div className="timeline-item-simple">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content-simple">
+                <span className="timeline-year">2026</span>
+                <h3>National Competitions</h3>
+                <p>Participated in Business Plan competitions at SGNDKC and IIT Roorkee, representing Enactus MLNC at national level.</p>
               </div>
             </div>
+            <p className="timeline-note">
+              More milestones being added soon.
+            </p>
           </div>
         </SectionContainer>
       </section>

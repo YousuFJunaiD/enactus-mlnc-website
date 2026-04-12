@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const revealSelectors = [
   'main section',
+  '.section-header',
   '.project-card',
   '.mentor-card',
   '.team-member-card',
@@ -12,7 +13,9 @@ const revealSelectors = [
   '.press-logo-card',
   '.contact-card',
   '.stat-box',
-  '.partner-logo-placeholder',
+  '.partner-logo-item',
+  '.sdg-badge',
+  '.timeline-item',
 ];
 
 export default function UiEnhancer() {
@@ -41,7 +44,18 @@ export default function UiEnhancer() {
     elements.forEach((element, index) => {
       element.classList.add('reveal-on-scroll');
       element.classList.remove('is-visible');
-      element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+
+      if (element.classList.contains('sdg-badge')) {
+        const parent = element.parentElement;
+        const siblings = parent ? Array.from(parent.children).filter(
+          child => child.classList.contains('sdg-badge')
+        ) : [];
+        const sdgIndex = siblings.indexOf(element);
+        element.style.setProperty('--sdg-delay', `${sdgIndex * 60}ms`);
+        element.style.setProperty('--reveal-delay', '0ms');
+      } else {
+        element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 100}ms`);
+      }
     });
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -83,53 +97,65 @@ export default function UiEnhancer() {
       return undefined;
     }
 
-    const animateCountUp = (element) => {
-      const originalText = element.textContent;
-      const numericMatch = originalText.match(/[\d,]+/);
-      if (!numericMatch) return;
+    const animateCountUp = (element, delay) => {
+      const original = element.textContent.trim();
+      const target = parseNumber(original);
+      if (target === 0) return;
 
-      const numericString = numericMatch[0];
-      const targetNumber = parseInt(numericString.replace(/,/g, ''), 10);
-      const prefix = originalText.split(numericString)[0];
-      const suffix = originalText.slice(originalText.indexOf(numericString) + numericString.length);
-
-      element.style.opacity = '0';
-      element.style.transform = 'translateY(12px)';
-      element.style.transition = 'none';
-
-      requestAnimationFrame(() => {
-        element.style.transition = 'opacity 400ms ease, transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        element.style.opacity = '1';
-        element.style.transform = 'translateY(0)';
-      });
-
+      const prefix = getPrefix(original);
+      const suffix = getSuffix(original);
       const duration = 2000;
-      const startTime = performance.now();
+      const start = performance.now() + delay;
 
-      const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
-
-      const tick = (currentTime) => {
-        const elapsed = currentTime - startTime;
+      function step(now) {
+        if (now < start) { requestAnimationFrame(step); return; }
+        const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeOutQuart(progress);
-        const currentValue = Math.round(easedProgress * targetNumber);
-        element.textContent = prefix + currentValue.toLocaleString('en-IN') + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(tick);
-        }
-      };
-
-      requestAnimationFrame(tick);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = eased * target;
+        element.textContent = prefix + formatNumber(current, original) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else element.textContent = original;
+      }
+      requestAnimationFrame(step);
     };
+
+    function parseNumber(text) {
+      const cleaned = text.replace(/[₹,\s]/g, '');
+      const match = cleaned.match(/[\d.]+/);
+      return match ? parseFloat(match[0]) : 0;
+    }
+
+    function getPrefix(text) {
+      if (text.includes('₹')) return '₹';
+      if (text.toLowerCase().startsWith('rs')) return 'Rs. ';
+      return '';
+    }
+
+    function getSuffix(text) {
+      const cleaned = text.replace(/[₹,\s]/g, '').replace(/Rs\.?/i, '');
+      return cleaned.replace(/[\d.]+/, '');
+    }
+
+    function formatNumber(val, originalText) {
+      if (originalText.includes(',') && val >= 1000) {
+        return Math.round(val).toLocaleString('en-IN');
+      }
+      if (originalText.includes('.')) {
+        const decimals = (originalText.match(/\.(\d+)/) || ['', ''])[1].length;
+        return val.toFixed(decimals);
+      }
+      return Math.round(val).toString();
+    }
 
     const countUpObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            const delay = parseInt(entry.target.style.getPropertyValue('--count-delay') || '0', 10);
             setTimeout(() => {
-              animateCountUp(entry.target);
-            }, index * 150);
+              animateCountUp(entry.target, 0);
+            }, delay);
             countUpObserver.unobserve(entry.target);
           }
         });
@@ -141,7 +167,10 @@ export default function UiEnhancer() {
     );
 
     const countUpElements = Array.from(document.querySelectorAll(countUpSelectors.join(',')));
-    countUpElements.forEach((el) => countUpObserver.observe(el));
+    countUpElements.forEach((el, i) => {
+      el.style.setProperty('--count-delay', `${i * 150}ms`);
+      countUpObserver.observe(el);
+    });
 
     return () => countUpObserver.disconnect();
   }, [location.pathname]);

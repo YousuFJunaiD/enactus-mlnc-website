@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Mail, MapPin, Globe, Camera } from 'lucide-react';
 import Card from '../components/Card';
 import PageHero from '../components/PageHero';
@@ -5,6 +6,9 @@ import SectionContainer from '../components/SectionContainer';
 import './Contact.css';
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = 'Contact Us | Enactus MLNC';
+  }, []);
   return (
     <div className="contact-page">
       <PageHero

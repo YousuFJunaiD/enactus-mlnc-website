@@ -48,11 +48,24 @@
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 
-.team-member-card:hover,
-.team-member-card:focus-within {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.15);
-  border-color: #F5A623;
+@media (hover: hover) {
+  .avatar-placeholder::after,
+  .text-placeholder::after {
+    animation: shimmer 2.2s infinite;
+  }
+
+  .team-member-card:hover,
+  .team-member-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(245, 166, 35, 0.15);
+    border-color: #F5A623;
+  }
+
+  .team-placeholder-instagram:hover {
+    background: #1A1A1A;
+    border-color: #1A1A1A;
+    color: #F5A623;
+  }
 }
 
 .mentor-avatar {
@@ -98,7 +111,6 @@
   inset: 0;
   transform: translateX(-100%);
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
-  animation: shimmer 2.2s infinite;
 }
 
 .avatar-placeholder::before {
@@ -133,7 +145,7 @@
   border-radius: 999px;
   border: 1px solid #DDDDDD;
   background: #FAF8F5;
-  color: #777777;
+  color: #666666;
   font-size: 0.68rem;
   font-weight: 700;
   transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
@@ -148,6 +160,13 @@
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-placeholder::after,
+  .text-placeholder::after {
+    display: none;
   }
 }
 

@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import PageHero from '../components/PageHero';
 import ProjectCard from '../components/ProjectCard';
 import SectionContainer from '../components/SectionContainer';
 import './Projects.css';
 
 export default function Projects() {
+  useEffect(() => {
+    document.title = 'Our Projects | Enactus MLNC';
+  }, []);
   return (
     <div className="projects-page">
       <PageHero

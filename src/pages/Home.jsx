@@ -1,4 +1,5 @@
-import { ArrowRight, Megaphone, FlaskConical } from 'lucide-react';
+import { useEffect } from 'react';
+import { Megaphone, FlaskConical } from 'lucide-react';
 import Card from '../components/Card';
 import PrimaryButton from '../components/PrimaryButton';
 import ProjectCard from '../components/ProjectCard';
@@ -7,6 +8,9 @@ import SectionContainer from '../components/SectionContainer';
 import './Home.css';
 
 export default function Home() {
+  useEffect(() => {
+    document.title = 'Enactus MLNC — Social Entrepreneurship, Motilal Nehru College';
+  }, []);
   return (
     <div className="home-page">
       <section className="hero-section section-bg-dark">
@@ -17,11 +21,11 @@ export default function Home() {
               Empowering Communities Through <span className="text-yellow">Social Entrepreneurship</span>
             </h1>
             <p className="text-lg text-light hero-subtitle">
-              Enactus Motilal Nehru College - Creating impact through innovation, business, and purpose.
+              Enactus Motilal Nehru College, University of Delhi — Creating impact through innovation, business, and purpose.
             </p>
             <div className="hero-cta">
               <PrimaryButton to="/projects">
-                Explore Our Projects
+                See Our Impact →
               </PrimaryButton>
             </div>
           </div>
@@ -75,8 +79,42 @@ export default function Home() {
               <p className="impact-label">Entrepreneurs</p>
             </div>
             <div className="impact-item">
-              <h2 className="impact-number">Rs. 10L+</h2>
-              <p className="impact-label">Revenue</p>
+              <h2 className="impact-number">₹10L+</h2>
+              <p className="impact-label">Revenue Generated</p>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
+
+      <section className="section partners-section">
+        <SectionContainer className="text-center">
+          <h2 className="heading-md mb-lg">Featured In & Partnered With</h2>
+          <div className="partners-ticker-wrapper mt-lg">
+            <div className="partners-ticker">
+              <div className="partners-ticker-track">
+                {[...Array(3)].map((_, groupIndex) => (
+                  <div key={groupIndex} className="partners-ticker-group">
+                    {[
+                      { name: 'Hindustan Times', abbr: 'HT City' },
+                      { name: 'ANI News India', abbr: 'ANI News' },
+                      { name: 'People for Animals', abbr: 'PeTA' },
+                      { name: 'FIAPO', abbr: 'FIAPO' },
+                      { name: 'Dailyhunt', abbr: 'Dailyhunt' },
+                      { name: 'Country News Today', abbr: 'CNT' },
+                      { name: 'Nishabd', abbr: 'Nishabd' },
+                      { name: 'ANI Ecogreen', abbr: 'Ecogreen' },
+                      { name: 'The Hindu', abbr: 'The Hindu' },
+                      { name: 'India Today', abbr: 'India Today' },
+                      { name: 'Zee News', abbr: 'Zee News' },
+                    ].map((partner) => (
+                      <div key={partner.abbr} className="partner-logo-item">
+                        <span className="partner-logo-name">{partner.abbr}</span>
+                        <span className="partner-logo-full">{partner.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </SectionContainer>
@@ -233,39 +271,6 @@ export default function Home() {
         </SectionContainer>
       </section>
 
-      <section className="section partners-section">
-        <SectionContainer className="text-center">
-          <h2 className="heading-md mb-lg">Featured In & Partnered With</h2>
-          <div className="partners-ticker-wrapper mt-lg">
-            <div className="partners-ticker">
-              <div className="partners-ticker-track">
-                {[...Array(3)].map((_, groupIndex) => (
-                  <div key={groupIndex} className="partners-ticker-group">
-                    {[
-                      { name: 'Hindustan Times', abbr: 'HT City' },
-                      { name: 'ANI News India', abbr: 'ANI News' },
-                      { name: 'People for Animals', abbr: 'PeTA' },
-                      { name: 'FIAPO', abbr: 'FIAPO' },
-                      { name: 'Dailyhunt', abbr: 'Dailyhunt' },
-                      { name: 'Country News Today', abbr: 'CNT' },
-                      { name: 'Nishabd', abbr: 'Nishabd' },
-                      { name: 'ANI Ecogreen', abbr: 'Ecogreen' },
-                      { name: 'The Hindu', abbr: 'The Hindu' },
-                      { name: 'India Today', abbr: 'India Today' },
-                      { name: 'Zee News', abbr: 'Zee News' },
-                    ].map((partner) => (
-                      <div key={partner.abbr} className="partner-logo-item">
-                        <span className="partner-logo-name">{partner.abbr}</span>
-                        <span className="partner-logo-full">{partner.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </SectionContainer>
-      </section>
     </div>
   );
 }
