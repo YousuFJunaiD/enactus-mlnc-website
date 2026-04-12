@@ -9,12 +9,72 @@
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
   overflow: hidden;
-  border-radius: var(--radius-xl);
-  border: var(--border-dark);
+  border-radius: 16px;
+  border: 2px solid #F5A623;
   background:
-    radial-gradient(circle at top right, rgba(245, 166, 35, 0.18), transparent 32%),
-    linear-gradient(145deg, #111111, #1b1a19);
-  box-shadow: var(--shadow-lg);
+    linear-gradient(145deg, #1A1A1A, #1d1c1a);
+  box-shadow: 0 32px 64px rgba(17, 17, 17, 0.12);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-achievement {
+    animation: borderPulse 2.5s ease-in-out infinite;
+  }
+}
+
+.achievement-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  background: rgba(245, 166, 35, 0.18);
+  border: 1px solid rgba(245, 166, 35, 0.45);
+  color: #F5A623;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-3);
+}
+
+.achievement-stat-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: var(--spacing-3);
+  padding-top: var(--spacing-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.achievement-stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  min-width: 5rem;
+  gap: 0.2rem;
+}
+
+.asp-number {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 800;
+  color: #F5A623;
+  line-height: 1;
+}
+
+.asp-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-achievement-visual {
+  display: none;
 }
 
 .hero-achievement-content {
@@ -42,6 +102,7 @@
   color: rgba(255, 255, 255, 0.54);
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
 }
 
 .achievement-list {
@@ -81,6 +142,36 @@
   background:
     linear-gradient(180deg, rgba(245, 166, 35, 0.08), rgba(255, 255, 255, 0.95)),
     var(--color-off-white);
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.metric-box h3 {
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  line-height: 1.2;
+}
+
+@media (max-width: 30rem) {
+  .metric-box {
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .metric-box h3 {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .metric-box.is-visible {
+    animation: slideUpFade 500ms ease-out forwards;
+  }
+
+  .metric-box:nth-child(1).is-visible { animation-delay: 0ms; }
+  .metric-box:nth-child(2).is-visible { animation-delay: 80ms; }
+  .metric-box:nth-child(3).is-visible { animation-delay: 160ms; }
+  .metric-box:nth-child(4).is-visible { animation-delay: 240ms; }
+  .metric-box:nth-child(5).is-visible { animation-delay: 320ms; }
+  .metric-box:nth-child(6).is-visible { animation-delay: 400ms; }
 }
 
 .press-logo-card {
@@ -98,9 +189,14 @@
 }
 
 @media (max-width: 48rem) {
-  .metric-grid,
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+
   .press-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.25rem);
   }
 }
 
@@ -108,5 +204,13 @@
   .metric-grid,
   .press-grid {
     grid-template-columns: 1fr;
+  }
+
+  .metric-box {
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .hero-achievement-content {
+    padding: clamp(1.25rem, 4vw, 2rem);
   }
 }

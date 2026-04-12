@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import UiEnhancer from './components/UiEnhancer';
+import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
 import './App.css';
 
 // Pages
@@ -24,7 +26,9 @@ function App() {
   return (
     <div className="app-wrapper">
       <ScrollToTop />
+      <ScrollProgress />
       <UiEnhancer />
+      <BackToTop />
       <Navbar />
       <main className="main-content">
         <Routes>

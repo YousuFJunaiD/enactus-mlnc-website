@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Megaphone, FlaskConical } from 'lucide-react';
 import Card from '../components/Card';
 import PrimaryButton from '../components/PrimaryButton';
 import ProjectCard from '../components/ProjectCard';
@@ -26,9 +26,34 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual flex-center">
-            <div className="hero-brand-pattern">
-              <div className="pattern-block yellow"></div>
-              <div className="pattern-block charcoal"></div>
+            <div className="hero-impact-card">
+              <div className="hero-impact-card-header">
+                <span className="hero-impact-label">Our Impact at a Glance</span>
+              </div>
+              <div className="hero-impact-grid">
+                <div className="hero-impact-stat">
+                  <span className="hero-impact-number">10,000+</span>
+                  <span className="hero-impact-desc">Lives Impacted</span>
+                </div>
+                <div className="hero-impact-stat">
+                  <span className="hero-impact-number">4</span>
+                  <span className="hero-impact-desc">Active Projects</span>
+                </div>
+                <div className="hero-impact-stat">
+                  <span className="hero-impact-number">&#8377;10L+</span>
+                  <span className="hero-impact-desc">Revenue Generated</span>
+                </div>
+                <div className="hero-impact-stat">
+                  <span className="hero-impact-number">200+</span>
+                  <span className="hero-impact-desc">Entrepreneurs</span>
+                </div>
+              </div>
+              <div className="hero-project-pills">
+                <span className="hero-project-pill">DESI</span>
+                <span className="hero-project-pill">SNEH</span>
+                <span className="hero-project-pill">BIOTHENE</span>
+                <span className="hero-project-pill">TISSERA</span>
+              </div>
             </div>
           </div>
         </SectionContainer>
@@ -130,12 +155,12 @@ export default function Home() {
           <h2 className="heading-lg">Our Mentors</h2>
           <div className="grid grid-cols-2 mentors-grid mt-lg">
             <Card className="mentor-card">
-              <div className="mentor-avatar"></div>
+              <div className="mentor-avatar mentor-avatar--initials">AP</div>
               <h3 className="heading-md">Dr. Anu Pandey</h3>
               <p className="text-yellow font-bold">Faculty Advisor</p>
             </Card>
             <Card className="mentor-card">
-              <div className="mentor-avatar"></div>
+              <div className="mentor-avatar mentor-avatar--initials">AK</div>
               <h3 className="heading-md">Mr. Ashish Kumar</h3>
               <p className="text-yellow font-bold">Enactus India Mentor</p>
             </Card>
@@ -143,15 +168,101 @@ export default function Home() {
         </SectionContainer>
       </section>
 
+      <section className="departments-section section-bg-offwhite">
+        <SectionContainer>
+          <div className="section-header text-center">
+            <h2 className="heading-lg">Our Departments</h2>
+            <p className="text-lg section-subtitle">Every team plays a critical role in turning ideas into impact.</p>
+          </div>
+          <div className="departments-grid mt-lg">
+            <div className="department-card">
+              <div className="department-icon">
+                <Megaphone size={28} />
+              </div>
+              <h3 className="department-title">Marketing & Outreach</h3>
+              <p className="department-desc">
+                Building brand presence, managing social media, forging partnerships, and telling the stories that matter.
+              </p>
+            </div>
+            <div className="department-card">
+              <div className="department-icon">
+                <FlaskConical size={28} />
+              </div>
+              <h3 className="department-title">Research & Development</h3>
+              <p className="department-desc">
+                Identifying social challenges, prototyping solutions, and engineering sustainable products that drive real change.
+              </p>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
+
+      <section className="pyramid-section">
+        <SectionContainer className="text-center">
+          <h2 className="heading-lg">Chapter Structure</h2>
+          <p className="text-lg section-subtitle mt-3">A collaborative hierarchy built on mentorship and shared purpose.</p>
+          <div className="pyramid-structure mt-xl">
+            <div className="pyramid-row">
+              <div className="pyramid-bar">President</div>
+              <div className="pyramid-bar">Vice President</div>
+            </div>
+            <div className="pyramid-row">
+              <div className="pyramid-bar">General Secretary</div>
+              <div className="pyramid-bar">Treasurer</div>
+              <div className="pyramid-bar">Tech Lead</div>
+            </div>
+            <div className="pyramid-row">
+              <div className="pyramid-bar">Project Heads</div>
+              <div className="pyramid-bar">Marketing Head</div>
+              <div className="pyramid-bar">Research Head</div>
+              <div className="pyramid-bar">HR Head</div>
+            </div>
+            <div className="pyramid-row">
+              <div className="pyramid-bar">Senior Associates</div>
+              <div className="pyramid-bar">Core Team</div>
+              <div className="pyramid-bar">Project Coordinators</div>
+            </div>
+            <div className="pyramid-row">
+              <div className="pyramid-bar">Junior Associates</div>
+              <div className="pyramid-bar">Volunteers</div>
+              <div className="pyramid-bar">Freshers</div>
+              <div className="pyramid-bar">Interns</div>
+              <div className="pyramid-bar">Members</div>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
+
       <section className="section partners-section">
         <SectionContainer className="text-center">
           <h2 className="heading-md mb-lg">Featured In & Partnered With</h2>
-          <div className="partners-grid mt-lg">
-            {['HT City', 'ANI News India', 'PeTA', 'FIAPO', 'Dailyhunt', 'Country News Today', 'Nishabd', 'ANI Ecogreen'].map((partner) => (
-              <div key={partner} className="partner-logo-placeholder">
-                {partner}
+          <div className="partners-ticker-wrapper mt-lg">
+            <div className="partners-ticker">
+              <div className="partners-ticker-track">
+                {[...Array(3)].map((_, groupIndex) => (
+                  <div key={groupIndex} className="partners-ticker-group">
+                    {[
+                      { name: 'Hindustan Times', abbr: 'HT City' },
+                      { name: 'ANI News India', abbr: 'ANI News' },
+                      { name: 'People for Animals', abbr: 'PeTA' },
+                      { name: 'FIAPO', abbr: 'FIAPO' },
+                      { name: 'Dailyhunt', abbr: 'Dailyhunt' },
+                      { name: 'Country News Today', abbr: 'CNT' },
+                      { name: 'Nishabd', abbr: 'Nishabd' },
+                      { name: 'ANI Ecogreen', abbr: 'Ecogreen' },
+                      { name: 'The Hindu', abbr: 'The Hindu' },
+                      { name: 'India Today', abbr: 'India Today' },
+                      { name: 'Zee News', abbr: 'Zee News' },
+                    ].map((partner) => (
+                      <div key={partner.abbr} className="partner-logo-item">
+                        <span className="partner-logo-name">{partner.abbr}</span>
+                        <span className="partner-logo-full">{partner.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </SectionContainer>
       </section>

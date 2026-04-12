@@ -1,0 +1,11 @@
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #F5A623;
+  z-index: 9999;
+  transition: width 50ms linear;
+  transform-origin: left;
+  pointer-events: none;
+}

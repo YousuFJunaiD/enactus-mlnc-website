@@ -6,10 +6,21 @@
 }
 
 .error-code {
-  font-size: 8rem;
+  font-size: clamp(5rem, 15vw, 8rem);
   font-weight: 800;
   line-height: 1;
   margin-bottom: var(--spacing-2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .error-code {
+    animation: errorPulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes errorPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
 }
 
 .not-found-actions {

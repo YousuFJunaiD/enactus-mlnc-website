@@ -19,7 +19,7 @@ export default function Navbar() {
     };
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 12);
+      setIsScrolled(window.scrollY > 80);
     };
 
     handleResize();

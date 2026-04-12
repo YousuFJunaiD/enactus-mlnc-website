@@ -70,5 +70,81 @@ export default function UiEnhancer() {
     return () => observer.disconnect();
   }, [location.pathname]);
 
+  useEffect(() => {
+    const countUpSelectors = [
+      '.impact-number',
+      '.stat-number',
+      '.metric-box h3',
+      '.achievement-metric',
+    ];
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      return undefined;
+    }
+
+    const animateCountUp = (element) => {
+      const originalText = element.textContent;
+      const numericMatch = originalText.match(/[\d,]+/);
+      if (!numericMatch) return;
+
+      const numericString = numericMatch[0];
+      const targetNumber = parseInt(numericString.replace(/,/g, ''), 10);
+      const prefix = originalText.split(numericString)[0];
+      const suffix = originalText.slice(originalText.indexOf(numericString) + numericString.length);
+
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(12px)';
+      element.style.transition = 'none';
+
+      requestAnimationFrame(() => {
+        element.style.transition = 'opacity 400ms ease, transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+      });
+
+      const duration = 2000;
+      const startTime = performance.now();
+
+      const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+      const tick = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutQuart(progress);
+        const currentValue = Math.round(easedProgress * targetNumber);
+        element.textContent = prefix + currentValue.toLocaleString('en-IN') + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        }
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    const countUpObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              animateCountUp(entry.target);
+            }, index * 150);
+            countUpObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.14,
+        rootMargin: '0px 0px -8% 0px',
+      }
+    );
+
+    const countUpElements = Array.from(document.querySelectorAll(countUpSelectors.join(',')));
+    countUpElements.forEach((el) => countUpObserver.observe(el));
+
+    return () => countUpObserver.disconnect();
+  }, [location.pathname]);
+
   return null;
 }

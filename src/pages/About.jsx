@@ -60,6 +60,57 @@ export default function About() {
           </div>
         </SectionContainer>
       </section>
+
+      <section className="section timeline-section">
+        <SectionContainer>
+          <div className="section-header text-center mb-lg">
+            <h2 className="heading-lg">Our Journey</h2>
+            <p className="text-lg section-subtitle">From a small idea to a decade of impact — milestones that define us.</p>
+          </div>
+          <div className="timeline">
+            <div className="timeline-item reveal-on-scroll">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <span className="timeline-year text-yellow font-bold">2014</span>
+                <h3 className="heading-sm">Chapter Founded</h3>
+                <p className="text-sm">Enactus MLNC established at Motilal Nehru College, University of Delhi, with a small team of passionate students.</p>
+              </div>
+            </div>
+            <div className="timeline-item reveal-on-scroll">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <span className="timeline-year text-yellow font-bold">2018</span>
+                <h3 className="heading-sm">National Recognition</h3>
+                <p className="text-sm">First major national competition appearance with Project DESI, receiving significant media attention from HT City and ANI News.</p>
+              </div>
+            </div>
+            <div className="timeline-item reveal-on-scroll">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <span className="timeline-year text-yellow font-bold">2022</span>
+                <h3 className="heading-sm">International Breakthrough</h3>
+                <p className="text-sm">Project SNEH achieved its first international sale, marking a milestone in cross-border social entrepreneurship.</p>
+              </div>
+            </div>
+            <div className="timeline-item reveal-on-scroll">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <span className="timeline-year text-yellow font-bold">2023</span>
+                <h3 className="heading-sm">Environmental Expansion</h3>
+                <p className="text-sm">Launched Project BIOTHENE and Project TISSERA, expanding our portfolio to address plastic pollution and textile waste.</p>
+              </div>
+            </div>
+            <div className="timeline-item reveal-on-scroll">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <span className="timeline-year text-yellow font-bold">2025</span>
+                <h3 className="heading-sm">A Decade of Impact</h3>
+                <p className="text-sm">Celebrating 10+ years, 10,000+ lives impacted, and continued growth with an expanded team and multi-project portfolio.</p>
+              </div>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
     </div>
   );
 }

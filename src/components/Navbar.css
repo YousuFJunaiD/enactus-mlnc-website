@@ -3,37 +3,24 @@
   top: 0;
   z-index: 1000;
   padding-block: 0.85rem;
-  transition:
-    background-color var(--transition-base),
-    box-shadow var(--transition-base),
-    padding var(--transition-base),
-    border-color var(--transition-base);
-}
-
-.navbar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 253, 250, 0.72);
+  background: rgba(255, 253, 250, 0.88);
   border-bottom: 1px solid transparent;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition:
-    background-color var(--transition-base),
-    border-color var(--transition-base),
-    box-shadow var(--transition-base);
-  z-index: -1;
+    box-shadow 200ms ease,
+    border-color 200ms ease;
 }
 
 .navbar-scrolled {
-  padding-block: 0.55rem;
+  box-shadow: 0 2px 16px rgba(17, 17, 17, 0.08);
+  border-bottom-color: #DDDDDD;
 }
 
-.navbar-scrolled::before,
-.has-scrolled .navbar::before {
-  background: rgba(255, 253, 250, 0.88);
-  border-bottom-color: rgba(17, 17, 17, 0.08);
-  box-shadow: var(--shadow-sm);
+@media (max-width: 48rem) {
+  .navbar {
+    background: rgba(255, 253, 250, 0.96);
+  }
 }
 
 .navbar-container {
@@ -100,18 +87,17 @@
 }
 
 .mobile-menu-btn {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 2;
   width: 3rem;
   height: 3rem;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(17, 17, 17, 0.1);
+  border: 1px solid #DDDDDD;
   border-radius: 999px;
   color: var(--color-primary-black);
-  background: rgba(255, 255, 255, 0.62);
-  box-shadow: var(--shadow-sm);
+  background: #FFFFFF;
 }
 
 .mobile-menu-btn.is-open {
@@ -124,19 +110,34 @@
 }
 
 @media (max-width: 48rem) {
-  .mobile-menu-btn {
-    display: inline-flex;
+  .navbar {
+    background: rgba(255, 253, 250, 0.96);
+  }
+
+  .nav-link {
+    min-height: 3rem;
+    width: 100%;
+    justify-content: flex-start;
+    padding-inline: 1rem;
+    border-radius: 1rem;
+  }
+
+  .nav-link::after {
+    inset-inline: 1rem auto;
+    width: 1.75rem;
+    bottom: 0.6rem;
   }
 
   .navbar-backdrop {
     display: block;
     position: fixed;
-    inset: calc(var(--nav-height) + 0.85rem) 0 0;
-    background: var(--color-overlay);
+    inset: 0;
+    background: rgba(17, 17, 17, 0.42);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--transition-base), visibility var(--transition-base);
+    transition: opacity 280ms ease, visibility 280ms ease;
+    z-index: 998;
   }
 
   .navbar-backdrop.open {
@@ -146,48 +147,32 @@
   }
 
   .nav-links {
-    position: absolute;
-    top: calc(100% + 0.55rem);
-    right: var(--container-gutter);
-    left: var(--container-gutter);
+    position: fixed;
+    top: var(--nav-height);
+    right: 0;
+    left: 0;
+    z-index: 999;
     flex-direction: column;
     align-items: stretch;
-    padding: 1rem;
-    border-radius: 1.5rem;
-    background: rgba(255, 253, 250, 0.96);
-    border: 1px solid rgba(17, 17, 17, 0.08);
-    box-shadow: var(--shadow-lg);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    transform: translateY(-0.75rem) scale(0.98);
+    padding: 0.75rem;
+    background: rgba(255, 253, 250, 0.98);
+    border-bottom: 1px solid #DDDDDD;
+    transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition:
-      opacity var(--transition-base),
-      transform var(--transition-base),
-      visibility var(--transition-base);
+    transition: transform 280ms ease, opacity 280ms ease, visibility 280ms ease;
   }
 
   .nav-links.open {
+    transform: translateY(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0) scale(1);
   }
 
-  .nav-link {
+  .nav-links li {
     width: 100%;
-    justify-content: flex-start;
-    min-height: 3rem;
-    padding-inline: 1rem;
-    border-radius: 1rem;
-  }
-
-  .nav-link::after {
-    inset-inline: 1rem auto;
-    width: 1.75rem;
-    bottom: 0.6rem;
   }
 }
 
@@ -200,8 +185,21 @@
     min-height: 4.5rem;
   }
 
+  .navbar-logo {
+    font-size: clamp(1rem, 4vw, 1.45rem);
+  }
+
+  .mobile-menu-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
   .nav-links {
-    left: 1rem;
-    right: 1rem;
+    padding: 0.5rem;
+  }
+
+  .nav-link {
+    padding-inline: 0.75rem;
+    font-size: 0.9rem;
   }
 }

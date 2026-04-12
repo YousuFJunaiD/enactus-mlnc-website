@@ -5,36 +5,35 @@
   height: 100%;
   min-height: 21rem;
   padding: clamp(1.5rem, 2.8vw, 2.25rem);
-  border: var(--border-light);
-  border-radius: var(--radius-xl);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 244, 0.98));
-  box-shadow: var(--shadow-sm);
+  border: 1px solid #DDDDDD;
+  border-radius: 16px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(17, 17, 17, 0.05);
   overflow: hidden;
   transition:
-    transform var(--transition-base),
-    box-shadow var(--transition-base),
-    border-color var(--transition-fast);
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
 }
 
 .project-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(245, 166, 35, 0.08), transparent 42%);
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: opacity 200ms ease;
 }
 
 .project-card:hover,
 .project-card:focus-within {
-  transform: translateY(-0.45rem);
-  border-color: rgba(245, 166, 35, 0.24);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: #F5A623;
+  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.15);
 }
 
 .project-card:hover::before,
 .project-card:focus-within::before {
+  background: linear-gradient(180deg, rgba(245, 166, 35, 0.06), transparent 42%);
   opacity: 1;
 }
 
@@ -76,8 +75,8 @@
   min-height: 2rem;
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
-  border: var(--border-light);
-  background: var(--color-off-white);
+  border: 1px solid #DDDDDD;
+  background: #FAF8F5;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -86,9 +85,9 @@
 }
 
 .badge-live {
-  background: rgba(245, 166, 35, 0.14);
+  background: rgba(245, 166, 35, 0.15);
   color: #8f5d07;
-  border-color: rgba(245, 166, 35, 0.24);
+  border-color: rgba(245, 166, 35, 0.3);
 }
 
 .project-card-summary {
@@ -102,12 +101,10 @@
   display: inline-flex;
   align-items: center;
   max-width: fit-content;
-  padding: 0.85rem 1rem;
-  border-radius: var(--radius-md);
-  color: var(--color-white);
-  background: linear-gradient(135deg, #141414, #242321);
-  border-left: 4px solid var(--color-primary-yellow);
-  box-shadow: var(--shadow-sm);
+  padding: 4px 12px;
+  border-radius: 6px;
+  color: #7A5000;
+  background: #FFF3D6;
 }
 
 .impact-text {
@@ -118,7 +115,7 @@
 
 .project-card-footer {
   padding-top: var(--spacing-3);
-  border-top: var(--border-light);
+  border-top: 1px solid #DDDDDD;
 }
 
 .project-card-cta {
@@ -130,7 +127,7 @@
 }
 
 .project-card-cta svg {
-  transition: transform var(--transition-base), color var(--transition-fast);
+  transition: transform 200ms ease, color 200ms ease;
 }
 
 .project-card:hover .project-card-cta svg,

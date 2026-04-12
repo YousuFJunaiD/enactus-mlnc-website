@@ -18,9 +18,9 @@ export default function Achievements() {
         <SectionContainer>
           <div className="hero-achievement mb-lg">
             <div className="hero-achievement-content">
-              <span className="badge badge-live mb-2">Biggest Achievement</span>
-              <h2 className="heading-lg">International Sale - First in Enactus India History</h2>
-              <p className="text-yellow font-bold text-lg mb-2">(November-December 2025)</p>
+              <span className="achievement-hero-badge">Biggest Achievement</span>
+              <h2 className="heading-lg mb-2">International Sale — First in Enactus India History</h2>
+              <p className="text-yellow font-bold text-lg mb-3">(November–December 2025)</p>
               <p className="text-lg mb-3">
                 For the first time in Enactus MLNC&apos;s 14-year journey, Project SNEH successfully completed an international sale, exporting 50+ handcrafted tote bags to the Canadian market.
               </p>
@@ -31,9 +31,24 @@ export default function Achievements() {
                 <li>Products handcrafted by local women artisans</li>
                 <li>Proof that Indian student social enterprise can scale globally</li>
               </ul>
-            </div>
-            <div className="hero-achievement-visual">
-              <div className="placeholder-image">Impact Graphic</div>
+              <div className="achievement-stat-pills">
+                <div className="achievement-stat-pill">
+                  <span className="asp-number">50+</span>
+                  <span className="asp-label">Bags Exported</span>
+                </div>
+                <div className="achievement-stat-pill">
+                  <span className="asp-number">2</span>
+                  <span className="asp-label">MoUs Signed</span>
+                </div>
+                <div className="achievement-stat-pill">
+                  <span className="asp-number">2</span>
+                  <span className="asp-label">Countries</span>
+                </div>
+                <div className="achievement-stat-pill">
+                  <span className="asp-number">14</span>
+                  <span className="asp-label">Years of Work</span>
+                </div>
+              </div>
             </div>
           </div>
 

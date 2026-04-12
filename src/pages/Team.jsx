@@ -1,3 +1,4 @@
+import { Camera } from 'lucide-react';
 import Card from '../components/Card';
 import PageHero from '../components/PageHero';
 import SectionContainer from '../components/SectionContainer';
@@ -13,6 +14,15 @@ export default function Team() {
             <div className="avatar-placeholder"></div>
             <div className="text-placeholder"></div>
             <div className="text-placeholder short"></div>
+            <a
+              href="https://instagram.com/enactusmlnc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="team-placeholder-instagram"
+            >
+              <Camera size={12} />
+              <span>Instagram</span>
+            </a>
           </Card>
         ))}
       </div>
@@ -37,12 +47,12 @@ export default function Team() {
             <h2 className="heading-md team-tier-title">Mentors</h2>
             <div className="grid grid-cols-2 mentors-grid max-w-800 mx-auto">
               <Card className="team-member-card">
-                <div className="mentor-avatar"></div>
+                <div className="mentor-avatar mentor-avatar--initials">AP</div>
                 <h3 className="heading-sm">Dr. Anu Pandey</h3>
                 <p className="text-yellow">Faculty Advisor</p>
               </Card>
               <Card className="team-member-card">
-                <div className="mentor-avatar"></div>
+                <div className="mentor-avatar mentor-avatar--initials">AK</div>
                 <h3 className="heading-sm">Mr. Ashish Kumar</h3>
                 <p className="text-yellow">Enactus India Mentor</p>
               </Card>

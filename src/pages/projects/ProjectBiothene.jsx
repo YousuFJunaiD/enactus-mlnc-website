@@ -82,6 +82,24 @@ export default function ProjectBiothene() {
           </div>
           
           <div className="content-block">
+            <h2 className="heading-ld border-bottom pb-2">Event Gallery</h2>
+            <div className="image-gallery mt-4">
+              <div className="gallery-img-placeholder">
+                <Camera size={32} />
+                <span>Dilli Haat sales drive photo</span>
+              </div>
+              <div className="gallery-img-placeholder">
+                <Camera size={32} />
+                <span>School awareness session photo</span>
+              </div>
+              <div className="gallery-img-placeholder">
+                <Camera size={32} />
+                <span>BIOTHENE product photo</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
             <div className="sdg-icons mt-3">
               {['5', '6', '8', '12', '13', '14', '15'].map(sdg => (

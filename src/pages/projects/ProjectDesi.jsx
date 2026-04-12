@@ -101,6 +101,24 @@ export default function ProjectDesi() {
           </div>
           
           <div className="content-block">
+            <h2 className="heading-ld border-bottom pb-2">Event Gallery</h2>
+            <div className="image-gallery mt-4">
+              <div className="gallery-img-placeholder">
+                <Camera size={32} />
+                <span>Event photo coming soon</span>
+              </div>
+              <div className="gallery-img-placeholder">
+                <Camera size={32} />
+                <span>Field work photo coming soon</span>
+              </div>
+              <div className="gallery-img-placeholder">
+                <Camera size={32} />
+                <span>Team photo coming soon</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
             <div className="sdg-icons mt-3">
               {['1', '2', '3', '4', '5', '8', '10'].map(sdg => (
