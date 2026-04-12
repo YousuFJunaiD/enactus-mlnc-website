@@ -87,7 +87,7 @@
 }
 
 .mobile-menu-btn {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -110,11 +110,9 @@
 }
 
 @media (max-width: 48rem) {
-  .navbar {
-    background: rgba(255, 253, 250, 0.96);
+  .mobile-menu-btn {
+    display: inline-flex;
   }
-
-  .nav-link {
     min-height: 3rem;
     width: 100%;
     justify-content: flex-start;

@@ -336,7 +336,7 @@
 /* ========== HERO IMPACT CARD ========== */
 .hero-impact-card {
   position: relative;
-  width: min(100%, 22rem);
+  width: min(100%, 26rem);
   padding: clamp(1.5rem, 3vw, 2rem);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -415,14 +415,14 @@
 .hero-project-pill {
   display: inline-flex;
   align-items: center;
-  padding: 0.3rem 0.75rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 999px;
   border: 1px solid rgba(245, 166, 35, 0.4);
   background: rgba(245, 166, 35, 0.12);
   color: rgba(245, 166, 35, 0.9);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 /* ========== DEPARTMENTS SECTION ========== */
