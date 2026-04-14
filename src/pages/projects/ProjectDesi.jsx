@@ -125,8 +125,19 @@ export default function ProjectDesi() {
           <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
             <div className="sdg-icons mt-3">
-              {['1', '2', '3', '4', '5', '8', '10'].map(sdg => (
-                <div key={sdg} className="sdg-badge" title={`SDG ${sdg}`}>{sdg}</div>
+              {[
+                { n: '1', name: 'No Poverty' },
+                { n: '2', name: 'Zero Hunger' },
+                { n: '3', name: 'Good Health' },
+                { n: '4', name: 'Education' },
+                { n: '5', name: 'Gender Equality' },
+                { n: '8', name: 'Decent Work' },
+                { n: '10', name: 'Reduced Inequalities' },
+              ].map(sdg => (
+                <div key={sdg.n} className="sdg-badge" title={sdg.name}>
+                  <span className="sdg-number">{sdg.n}</span>
+                  <span className="sdg-name">{sdg.name}</span>
+                </div>
               ))}
             </div>
           </div>

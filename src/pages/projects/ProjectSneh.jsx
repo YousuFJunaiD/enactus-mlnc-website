@@ -54,6 +54,9 @@ export default function ProjectSneh() {
             <div className="mt-3">
               <img src={totesDisplay} alt="Tote bags display at sales event" loading="lazy" decoding="async" style={{borderRadius:'var(--radius-lg)',objectFit:'cover',width:'100%',maxHeight:'360px',display:'block'}} />
             </div>
+            <p className="text-secondary mt-3 text-center" style={{fontStyle:'italic'}}>
+              Handcrafted tote bags made by local women artisans — each carrying stories of resilience, skill, and impact. These bags were exported to Canada in the first international sale in Enactus India history.
+            </p>
           </div>
 
           <div className="content-block">
@@ -82,8 +85,22 @@ export default function ProjectSneh() {
           <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
             <div className="sdg-icons mt-3">
-              {['1', '3', '4', '5', '6', '10', '12', '13', '14', '15'].map(sdg => (
-                <div key={sdg} className="sdg-badge" title={`SDG ${sdg}`}>{sdg}</div>
+              {[
+                { n: '1', name: 'No Poverty' },
+                { n: '3', name: 'Good Health' },
+                { n: '4', name: 'Quality Education' },
+                { n: '5', name: 'Gender Equality' },
+                { n: '6', name: 'Clean Water' },
+                { n: '10', name: 'Reduced Inequalities' },
+                { n: '12', name: 'Responsible Consumption' },
+                { n: '13', name: 'Climate Action' },
+                { n: '14', name: 'Life Below Water' },
+                { n: '15', name: 'Life on Land' },
+              ].map(sdg => (
+                <div key={sdg.n} className="sdg-badge" title={sdg.name}>
+                  <span className="sdg-number">{sdg.n}</span>
+                  <span className="sdg-name">{sdg.name}</span>
+                </div>
               ))}
             </div>
           </div>

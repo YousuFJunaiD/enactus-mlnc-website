@@ -64,17 +64,17 @@ export default function Achievements() {
               <Card className="achievement-card">
                 <h3 className="heading-sm">Business Plan Competition - SGNDKC</h3>
                 <p className="text-secondary mb-2">January 2026</p>
-                <p>Won top honors for sustainable business modeling.</p>
+                <p>Represented Enactus MLNC at the Business Plan Competition at SGNDKC, January 2026.</p>
               </Card>
               <Card className="achievement-card">
                 <h3 className="heading-sm">Business Plan Competition - IIT Roorkee</h3>
                 <p className="text-secondary mb-2">February 7, 2026</p>
-                <p>Recognized for scalable impact among India&apos;s top teams.</p>
+                <p>Competed at the Business Plan Competition at IIT Roorkee among top teams from across India, February 2026.</p>
               </Card>
               <Card className="achievement-card">
                 <h3 className="heading-sm">Case Competition - IIT Roorkee</h3>
                 <p className="text-secondary mb-2">February 2026</p>
-                <p>Awarded for innovative problem-solving and strategy.</p>
+                <p>Participated in the Case Competition at IIT Roorkee, demonstrating innovative problem-solving and strategy, February 2026.</p>
               </Card>
               <Card className="achievement-card">
                 <h3 className="heading-sm">Enactus Global Grant</h3>
@@ -94,7 +94,7 @@ export default function Achievements() {
                 <p>of sustainable operation</p>
               </Card>
               <Card className="metric-box">
-                <h3 className="text-yellow text-xl font-bold">Rs. 14.2L+</h3>
+                <h3 className="text-yellow text-xl font-bold">₹14.2L+</h3>
                 <p>SNEH Revenue</p>
               </Card>
               <Card className="metric-box">
@@ -106,7 +106,7 @@ export default function Achievements() {
                 <p>Dogs immunized (DESI)</p>
               </Card>
               <Card className="metric-box">
-                <h3 className="text-yellow text-xl font-bold">Rs. 35,000+</h3>
+                <h3 className="text-yellow text-xl font-bold">₹35,000+</h3>
                 <p>TISSERA Sales since launch</p>
               </Card>
               <Card className="metric-box">

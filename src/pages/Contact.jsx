@@ -50,6 +50,14 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+
+              <div className="contact-info-item">
+                <div className="contact-icon"><Camera className="text-yellow" size={24} /></div>
+                <div>
+                  <h3 className="font-bold">Instagram</h3>
+                  <a href="https://instagram.com/enactusmlnc" target="_blank" rel="noopener noreferrer" className="text-secondary hover-text-primary">@enactusmlnc</a>
+                </div>
+              </div>
             </div>
 
             <div className="project-instagrams mt-lg pt-4 border-top">

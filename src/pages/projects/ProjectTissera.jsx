@@ -86,6 +86,52 @@ export default function ProjectTissera() {
           </div>
 
           <div className="content-block">
+            <h2 className="heading-ld border-bottom pb-2">Business Model</h2>
+            <div className="stats-grid mt-4">
+              <div className="stat-box">
+                <div className="stat-number">₹35K+</div>
+                <div className="stat-label">Revenue since launch</div>
+              </div>
+              <div className="stat-box">
+                <div className="stat-number">Aug '25</div>
+                <div className="stat-label">Project Launched</div>
+              </div>
+              <div className="stat-box">
+                <div className="stat-number">7.8M</div>
+                <div className="stat-label">Tonnes textile waste/yr</div>
+              </div>
+            </div>
+            <p className="text-lg mt-4">
+              Project Tissera converts discarded cotton and surplus fabric into saleable value-added products, including tote bags, aprons, and accessories. Each sale directly supports women artisans from underprivileged backgrounds, giving them financial independence and market access.
+            </p>
+          </div>
+
+          <div className="content-block">
+            <h2 className="heading-ld border-bottom pb-2">Collaborations & Sales</h2>
+            <p className="text-lg mt-3">
+              Project Tissera has partnered with the <strong>Cloth Box Foundation</strong> for consistent bulk orders and materials sourcing. In addition to institutional orders, the team has conducted two on-campus sales drives — on October 7 and November 21, 2025 — to build community engagement and generate revenue.
+            </p>
+          </div>
+
+          <div className="content-block">
+            <h2 className="heading-ld border-bottom pb-2">Gallery</h2>
+            <div className="gallery-placeholder-grid mt-4">
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>Sales drive October 2025</span>
+              </div>
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>Product collection</span>
+              </div>
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>Artisan workshop</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
             <div className="sdg-icons mt-3">
               {['1', '5', '8', '10', '12', '13'].map(sdg => (

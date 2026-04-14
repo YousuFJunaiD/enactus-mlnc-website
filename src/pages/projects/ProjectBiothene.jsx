@@ -87,18 +87,30 @@ export default function ProjectBiothene() {
           
           <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">Event Gallery</h2>
-            <div className="image-gallery mt-4">
-              <div className="gallery-img-placeholder">
-                <Camera size={32} />
-                <span>Dilli Haat sales drive photo</span>
+            <div className="gallery-placeholder-grid mt-4">
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>Dilli Haat sales drive</span>
               </div>
-              <div className="gallery-img-placeholder">
-                <Camera size={32} />
-                <span>School awareness session photo</span>
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>School awareness session</span>
               </div>
-              <div className="gallery-img-placeholder">
-                <Camera size={32} />
-                <span>BIOTHENE product photo</span>
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>BIOTHENE product showcase</span>
+              </div>
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>Bag production process</span>
+              </div>
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>Packaging for sale drive</span>
+              </div>
+              <div className="gallery-placeholder-item">
+                <Camera size={36} />
+                <span>Team at Khan Market</span>
               </div>
             </div>
           </div>

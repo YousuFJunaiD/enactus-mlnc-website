@@ -103,9 +103,9 @@ export default function Home() {
                       { name: 'Country News Today', abbr: 'CNT' },
                       { name: 'Nishabd', abbr: 'Nishabd' },
                       { name: 'ANI Ecogreen', abbr: 'Ecogreen' },
-                      { name: 'The Hindu', abbr: 'The Hindu' },
-                      { name: 'India Today', abbr: 'India Today' },
-                      { name: 'Zee News', abbr: 'Zee News' },
+                      { name: 'Blind Relief Association', abbr: 'BRA' },
+                      { name: 'The Woman Company', abbr: 'TWC' },
+                      { name: 'Streebal NGO', abbr: 'Streebal' },
                     ].map((partner) => (
                       <div key={partner.abbr} className="partner-logo-item">
                         <span className="partner-logo-name">{partner.abbr}</span>
@@ -156,14 +156,14 @@ export default function Home() {
               to="/projects/desi"
               title="Project DESI"
               summary="Duty to Empathize, Sterilize, and Immunize. Eradicating canine rabies and spreading awareness about animal welfare."
-              impactBadge="Rs. 2.2L Revenue"
+              impactBadge="₹2.2L Revenue"
               isLive={true}
             />
             <ProjectCard
               to="/projects/sneh"
               title="Project SNEH"
               summary="Offering better sanitary alternatives and empowering underprivileged communities to become visionary entrepreneurs."
-              impactBadge="Rs. 14.2L Revenue + First International Sale"
+              impactBadge="₹14.2L · First India International Sale"
               isLive={true}
             />
             <ProjectCard
@@ -177,7 +177,7 @@ export default function Home() {
               to="/projects/tissera"
               title="Project TISSERA"
               summary="Transforming textile waste into sustainable value-added products while empowering women entrepreneurs."
-              impactBadge="Rs. 35,000+ Revenue"
+              impactBadge="₹35,000+ Revenue"
               isLive={true}
             />
           </div>

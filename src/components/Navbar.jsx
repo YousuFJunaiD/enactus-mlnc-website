@@ -52,7 +52,13 @@ export default function Navbar() {
     <nav className={`navbar${isScrolled ? ' navbar-scrolled' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <span className="logo-text">ENACTUS <span className="text-yellow">MLNC</span></span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polygon points="10,2 18,18 2,18" fill="#F5A623" />
+              <polygon points="10,7 14,15 6,15" fill="#1A1A1A" />
+            </svg>
+            <span className="logo-text">ENACTUS <span className="text-yellow">MLNC</span></span>
+          </span>
         </Link>
         
         <button
