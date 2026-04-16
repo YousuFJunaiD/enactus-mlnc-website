@@ -122,9 +122,31 @@ export default function ProjectBiothene() {
 
           <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
+            <p className="sdg-explainer">
+              Aligned with the UN's 17 Sustainable Development Goals — global targets for a better world by 2030.
+            </p>
             <div className="sdg-icons mt-3">
-              {['5', '6', '8', '12', '13', '14', '15'].map(sdg => (
-                <div key={sdg} className="sdg-badge" title={`SDG ${sdg}`}>{sdg}</div>
+              {[
+                { n: '5', label: 'Gender Equality' },
+                { n: '6', label: 'Clean Water' },
+                { n: '8', label: 'Decent Work' },
+                { n: '12', label: 'Responsible Consumption' },
+                { n: '13', label: 'Climate Action' },
+                { n: '14', label: 'Life Below Water' },
+                { n: '15', label: 'Life on Land' },
+              ].map(sdg => (
+                <a
+                  key={sdg.n}
+                  href={`https://sdgs.un.org/goals/goal${sdg.n}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sdg-badge"
+                  title={`SDG ${sdg.n} — ${sdg.label}`}
+                  aria-label={`SDG ${sdg.n} ${sdg.label} — Learn more`}
+                >
+                  <span className="sdg-number">{sdg.n}</span>
+                  <span className="sdg-name">{sdg.label}</span>
+                </a>
               ))}
             </div>
           </div>

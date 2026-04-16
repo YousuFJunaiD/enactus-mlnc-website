@@ -136,20 +136,31 @@ export default function ProjectDesi() {
 
           <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
+            <p className="sdg-explainer">
+              Aligned with the UN's 17 Sustainable Development Goals — global targets for a better world by 2030.
+            </p>
             <div className="sdg-icons mt-3">
               {[
-                { n: '1', name: 'No Poverty' },
-                { n: '2', name: 'Zero Hunger' },
-                { n: '3', name: 'Good Health' },
-                { n: '4', name: 'Education' },
-                { n: '5', name: 'Gender Equality' },
-                { n: '8', name: 'Decent Work' },
-                { n: '10', name: 'Reduced Inequalities' },
+                { n: '1', label: 'No Poverty' },
+                { n: '2', label: 'Zero Hunger' },
+                { n: '3', label: 'Good Health' },
+                { n: '4', label: 'Education' },
+                { n: '5', label: 'Gender Equality' },
+                { n: '8', label: 'Decent Work' },
+                { n: '10', label: 'Reduced Inequalities' },
               ].map(sdg => (
-                <div key={sdg.n} className="sdg-badge" title={sdg.name}>
+                <a
+                  key={sdg.n}
+                  href={`https://sdgs.un.org/goals/goal${sdg.n}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sdg-badge"
+                  title={`SDG ${sdg.n} — ${sdg.label}`}
+                  aria-label={`SDG ${sdg.n} ${sdg.label} — Learn more`}
+                >
                   <span className="sdg-number">{sdg.n}</span>
-                  <span className="sdg-name">{sdg.name}</span>
-                </div>
+                  <span className="sdg-name">{sdg.label}</span>
+                </a>
               ))}
             </div>
           </div>

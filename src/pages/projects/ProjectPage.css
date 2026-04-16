@@ -192,6 +192,8 @@
 }
 
 .sdg-badge {
+  text-decoration: none;
+  cursor: pointer;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -207,9 +209,23 @@
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-.sdg-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.3);
+@media (hover: hover) {
+  .sdg-badge:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 6px 16px rgba(245, 166, 35, 0.4);
+  }
+}
+
+.sdg-badge:active {
+  transform: scale(0.95);
+}
+
+.sdg-explainer {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  max-width: 52ch;
 }
 
 .sdg-number {

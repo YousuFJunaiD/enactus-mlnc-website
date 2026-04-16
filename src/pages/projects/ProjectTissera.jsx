@@ -138,9 +138,30 @@ export default function ProjectTissera() {
 
           <div className="content-block">
             <h2 className="heading-ld border-bottom pb-2">SDGs Addressed</h2>
+            <p className="sdg-explainer">
+              Aligned with the UN's 17 Sustainable Development Goals — global targets for a better world by 2030.
+            </p>
             <div className="sdg-icons mt-3">
-              {['1', '5', '8', '10', '12', '13'].map(sdg => (
-                <div key={sdg} className="sdg-badge" title={`SDG ${sdg}`}>{sdg}</div>
+              {[
+                { n: '1', label: 'No Poverty' },
+                { n: '5', label: 'Gender Equality' },
+                { n: '8', label: 'Decent Work' },
+                { n: '10', label: 'Reduced Inequalities' },
+                { n: '12', label: 'Responsible Consumption' },
+                { n: '13', label: 'Climate Action' },
+              ].map(sdg => (
+                <a
+                  key={sdg.n}
+                  href={`https://sdgs.un.org/goals/goal${sdg.n}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sdg-badge"
+                  title={`SDG ${sdg.n} — ${sdg.label}`}
+                  aria-label={`SDG ${sdg.n} ${sdg.label} — Learn more`}
+                >
+                  <span className="sdg-number">{sdg.n}</span>
+                  <span className="sdg-name">{sdg.label}</span>
+                </a>
               ))}
             </div>
           </div>
