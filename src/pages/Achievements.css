@@ -85,6 +85,26 @@
   color: var(--color-white);
 }
 
+.hero-achievement .text-secondary {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.hero-achievement p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-achievement li {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-achievement-content .text-lg {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.achievement-list li {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .hero-achievement-visual {
   min-height: 100%;
   display: flex;

@@ -295,23 +295,24 @@
     gap: clamp(0.75rem, 2vw, 1.25rem);
   }
 
-  .sdg-icons {
-    gap: 0.5rem;
+  .sdg-name {
+    display: none;
   }
 
   .sdg-badge {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 0.9rem;
   }
 
   .sdg-number {
-    font-size: 0.82rem;
+    font-size: 0.9rem;
+    font-weight: 800;
   }
 
-  .sdg-name {
-    font-size: 0.38rem;
-    max-width: 38px;
-    line-height: 1.1;
+  .sdg-icons {
+    gap: 8px;
+    justify-content: flex-start;
   }
 
   .content-block h2 {
