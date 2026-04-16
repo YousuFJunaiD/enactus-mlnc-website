@@ -157,6 +157,69 @@
   color: #F5A623;
 }
 
+.team-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-white);
+  border: 1px dashed #DDDDDD;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.team-empty-icon {
+  width: 72px;
+  height: 72px;
+  background: #FFF3D6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.team-empty-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  margin-bottom: 0.5rem;
+}
+
+.team-empty-desc {
+  font-size: 0.9rem;
+  color: #666666;
+  line-height: 1.7;
+  max-width: 36ch;
+  margin-bottom: 1.25rem;
+}
+
+.team-empty-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: #F5A623;
+  color: #1A1A1A;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+@media (hover: hover) {
+  .team-empty-cta:hover {
+    background: #E09520;
+    transform: translateY(-2px);
+  }
+}
+
 @keyframes shimmer {
   100% {
     transform: translateX(100%);

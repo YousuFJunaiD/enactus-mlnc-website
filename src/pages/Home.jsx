@@ -125,7 +125,14 @@ export default function Home() {
           <div className="grid grid-cols-2 align-center gap-large">
             <div className="about-visual">
               <div className="placeholder-image about-placeholder">
-                <span className="placeholder-text">Enactus MLNC Team</span>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CCCCCC" strokeWidth="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <p style={{fontSize:'0.8rem',color:'#AAAAAA',marginTop:'8px',textAlign:'center',fontFamily:'var(--font-body)'}}>
+                  Team photo coming soon
+                </p>
               </div>
             </div>
             <div className="about-text">
@@ -144,11 +151,47 @@ export default function Home() {
         </SectionContainer>
       </section>
 
+      <section className="section how-we-work-section">
+        <SectionContainer>
+          <div className="section-header text-center">
+            <h2 className="heading-lg">How We Work</h2>
+            <p className="text-lg section-subtitle">
+              Three steps. Real impact. Measurable change.
+            </p>
+          </div>
+          <div className="how-we-work-grid mt-xl">
+            <div className="how-step">
+              <div className="how-step-number">01</div>
+              <h3 className="how-step-title">We Identify</h3>
+              <p className="how-step-desc">
+                We research pressing social, economic, and environmental challenges faced by underserved communities in our region.
+              </p>
+            </div>
+            <div className="how-step-divider">→</div>
+            <div className="how-step">
+              <div className="how-step-number">02</div>
+              <h3 className="how-step-title">We Build</h3>
+              <p className="how-step-desc">
+                We develop sustainable business models and entrepreneurial solutions — creating products and services that generate real revenue and employment.
+              </p>
+            </div>
+            <div className="how-step-divider">→</div>
+            <div className="how-step">
+              <div className="how-step-number">03</div>
+              <h3 className="how-step-title">We Impact</h3>
+              <p className="how-step-desc">
+                We measure outcomes — lives changed, revenue generated, entrepreneurs created — and scale what works.
+              </p>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
+
       <section className="section">
         <SectionContainer>
           <div className="section-header text-center">
             <h2 className="heading-lg">Our Projects</h2>
-            <p className="text-lg section-subtitle">Initiatives that drive real, measurable impact.</p>
+            <p className="text-lg section-subtitle">Four projects. Four communities. One shared mission.</p>
           </div>
 
           <div className="grid grid-cols-2 projects-grid-home">
@@ -210,7 +253,7 @@ export default function Home() {
         <SectionContainer>
           <div className="section-header text-center">
             <h2 className="heading-lg">Our Departments</h2>
-            <p className="text-lg section-subtitle">Every team plays a critical role in turning ideas into impact.</p>
+            <p className="text-lg section-subtitle">Marketing builds our voice. Research builds our solutions.</p>
           </div>
           <div className="departments-grid mt-lg">
             <div className="department-card">
@@ -238,7 +281,7 @@ export default function Home() {
       <section className="pyramid-section">
         <SectionContainer className="text-center">
           <h2 className="heading-lg">Chapter Structure</h2>
-          <p className="text-lg section-subtitle mt-3">A collaborative hierarchy built on mentorship and shared purpose.</p>
+          <p className="text-lg section-subtitle mt-3">From freshers to executives — every member drives the mission forward.</p>
           <div className="pyramid-structure mt-xl">
             <div className="pyramid-row">
               <div className="pyramid-bar">President</div>
@@ -267,6 +310,25 @@ export default function Home() {
               <div className="pyramid-bar">Interns</div>
               <div className="pyramid-bar">Members</div>
             </div>
+          </div>
+        </SectionContainer>
+      </section>
+
+      <section className="section final-cta-section section-bg-dark">
+        <SectionContainer className="text-center">
+          <h2 className="heading-lg text-white">
+            Want to Make an Impact?
+          </h2>
+          <p className="text-lg text-light mt-3 final-cta-subtitle">
+            Whether you are a student who wants to join, a brand looking to collaborate, or an organisation that shares our vision — we would love to connect.
+          </p>
+          <div className="final-cta-buttons mt-xl">
+            <PrimaryButton to="/contact">
+              Get in Touch →
+            </PrimaryButton>
+            <SecondaryButton to="/projects">
+              See Our Work
+            </SecondaryButton>
           </div>
         </SectionContainer>
       </section>

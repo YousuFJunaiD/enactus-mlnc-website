@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Card from '../components/Card';
 import PageHero from '../components/PageHero';
+import PrimaryButton from '../components/PrimaryButton';
 import SectionContainer from '../components/SectionContainer';
 import './Achievements.css';
 
@@ -122,13 +123,38 @@ export default function Achievements() {
             <h2 className="heading-md mb-3">Press & Media Coverage</h2>
             <p className="mb-4">Our work has been covered by leading national and regional publications.</p>
             <div className="grid grid-cols-4 press-grid">
-              {['Hindustan Times / HT City', 'ANI News India', 'Country News Today', 'Nishabd', 'Tarrar', 'Dailyhunt', 'FIAPO', 'PeTA'].map((logo) => (
-                <Card key={logo} className="press-logo-card">
-                  <h4 className="font-bold mb-1">{logo}</h4>
-                  <p className="text-sm text-secondary">Article link coming soon</p>
-                </Card>
-              ))}
+              {[
+              {name:'Hindustan Times / HT City', note:'National daily coverage'},
+              {name:'ANI News India', note:'National news wire coverage'},
+              {name:'Country News Today', note:'Digital news coverage'},
+              {name:'Nishabd', note:'Independent media coverage'},
+              {name:'Tarrar', note:'Digital platform coverage'},
+              {name:'Dailyhunt', note:'Platform coverage'},
+              {name:'FIAPO', note:'Animal welfare org feature'},
+              {name:'PeTA', note:'Animal rights org feature'},
+            ].map((item) => (
+              <Card key={item.name} className="press-logo-card">
+                <h4 className="font-bold mb-1">{item.name}</h4>
+                <p className="text-sm text-secondary">{item.note}</p>
+              </Card>
+            ))}
             </div>
+          </div>
+        </SectionContainer>
+      </section>
+
+      <section className="section section-bg-dark text-center">
+        <SectionContainer>
+          <h2 className="heading-md text-white">
+            Partner With a Proven Team
+          </h2>
+          <p className="text-lg text-light mt-2" style={{opacity:0.85,maxWidth:'48ch',marginInline:'auto'}}>
+            From local communities to international collaborations — we are always looking for partners who share our vision.
+          </p>
+          <div className="mt-xl">
+            <PrimaryButton to="/contact">
+              Get in Touch →
+            </PrimaryButton>
           </div>
         </SectionContainer>
       </section>

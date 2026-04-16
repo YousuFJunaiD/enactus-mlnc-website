@@ -15,6 +15,11 @@ export default function ProjectSneh() {
     <div className="project-detail-page">
       <section className="project-hero section-bg-dark">
         <div className="container max-w-800 mx-auto">
+          <div className="project-breadcrumb">
+            <a href="/projects" className="breadcrumb-link">Projects</a>
+            <span className="breadcrumb-sep">›</span>
+            <span className="breadcrumb-current">SNEH</span>
+          </div>
           <span className="badge badge-live uppercase tracking-wider mb-3 block" style={{width: 'auto', display: 'inline-block'}}>First Enactus India International Sale</span>
           <h1 className="heading-xl mt-2">Project SNEH</h1>
           <p className="project-hero-subtitle text-light">
@@ -40,8 +45,14 @@ export default function ProjectSneh() {
               "Better sanitary alternatives than plastic, clean drinking water, and empowering women as entrepreneurs."
             </h2>
             <p className="text-lg">
-              Project Sneh aims to offer sustainable alternatives and clean water solutions while empowering underprivileged communities to become visionary entrepreneurs.
+              Project SNEH provides sustainable alternatives to plastic while empowering underprivileged communities to become self-reliant entrepreneurs.
             </p>
+            <ul className="project-bullet-list mt-3">
+              <li>Sanitary napkins as sustainable alternatives to plastic-based products</li>
+              <li>Handcrafted tote bags generating income for women artisans</li>
+              <li>Clean drinking water solutions for underserved communities</li>
+              <li>First international sale in Enactus India history — Canada, 2025</li>
+            </ul>
           </div>
 
           <div className="content-block">

@@ -51,6 +51,9 @@ export default function Footer() {
             <h3 className="footer-heading">Social Presence</h3>
             <p className="footer-meta">Stay connected with the chapter, our work, and our community.</p>
             <div className="social-links-stack">
+              <a href="https://instagram.com/enactusmlnc" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Enactus MLNC Instagram">
+                @enactusmlnc
+              </a>
               <a href="https://linkedin.com/company/enactusmlnc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Globe size={18} /> <span className="social-label">LinkedIn</span>
               </a>

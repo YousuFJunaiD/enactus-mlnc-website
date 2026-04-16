@@ -83,6 +83,7 @@ body.menu-open {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(245, 166, 35, 0.08);
 }
 
 ::selection {
@@ -178,6 +179,21 @@ select {
 
 button {
   background: none;
+}
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.btn,
+button,
+[role="button"],
+.back-to-top,
+.mobile-menu-btn,
+.team-empty-cta {
+  min-height: 44px;
 }
 
 ul {
@@ -299,11 +315,33 @@ img {
 }
 
 .page-hero-kicker {
-  max-width: 44rem;
+  max-width: 42ch;
   color: rgba(255, 255, 255, 0.95);
   font-size: clamp(1rem, 1.8vw, 1.35rem);
   font-weight: 700;
   line-height: 1.6;
+}
+
+@media (max-width: 48rem) {
+  .page-hero-kicker {
+    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+    max-width: 30ch;
+  }
+}
+
+.page-hero-description {
+  max-width: 44rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  line-height: 1.65;
+}
+
+@media (max-width: 48rem) {
+  .page-hero-description {
+    font-size: 0.875rem;
+    max-width: 34ch;
+    margin-inline: auto;
+  }
 }
 
 .page-hero-divider {
@@ -611,6 +649,26 @@ img {
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.pyramid-bar,
+.partner-logo-item,
+.sdg-badge,
+.hero-project-pill,
+.how-step-number {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 48rem) {
+  .impact-strip .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .impact-item {
+    padding: 0.75rem 0.5rem;
+  }
 }
 
 @media (max-width: 64rem) {

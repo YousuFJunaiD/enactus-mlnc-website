@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PageHero from '../components/PageHero';
+import PrimaryButton from '../components/PrimaryButton';
 import SectionContainer from '../components/SectionContainer';
 import './About.css';
 
@@ -31,7 +32,14 @@ export default function About() {
               </p>
             </div>
             <div className="about-image-placeholder">
-              Team Photo / Action Shot
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CCCCCC" strokeWidth="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <p style={{fontSize:'0.8rem',color:'#AAAAAA',marginTop:'8px',textAlign:'center',fontFamily:'var(--font-body)'}}>
+                Team photo coming soon
+              </p>
             </div>
           </div>
         </SectionContainer>
@@ -115,6 +123,22 @@ export default function About() {
             <p className="timeline-note">
               More milestones being added soon.
             </p>
+          </div>
+        </SectionContainer>
+      </section>
+
+      <section className="section section-bg-dark text-center">
+        <SectionContainer>
+          <h2 className="heading-md text-white">
+            Curious About Our Work?
+          </h2>
+          <p className="text-lg text-light mt-2" style={{opacity:0.85,maxWidth:'48ch',marginInline:'auto'}}>
+            Explore the projects that are creating real change across communities.
+          </p>
+          <div className="mt-xl">
+            <PrimaryButton to="/projects">
+              See Our Projects →
+            </PrimaryButton>
           </div>
         </SectionContainer>
       </section>

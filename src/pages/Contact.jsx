@@ -80,6 +80,89 @@ export default function Contact() {
           </Card>
         </SectionContainer>
       </section>
+
+      <section className="section section-bg-offwhite">
+        <SectionContainer narrow>
+          <div className="contact-form-card">
+            <h2 className="heading-md text-center mb-4">
+              Send Us a Message
+            </h2>
+            <p className="text-lg text-center mb-xl" style={{color:'#666666'}}>
+              Fill in the form and we will get back to you within 24 hours.
+            </p>
+            <form className="contact-form" onSubmit={(e) => {
+              e.preventDefault();
+              const btn = e.target.querySelector('.form-submit-btn');
+              btn.textContent = 'Message Sent ✓';
+              btn.style.background = '#1A1A1A';
+              btn.disabled = true;
+            }}>
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-name">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  className="form-input"
+                  placeholder="e.g. Rahul Sharma"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-email">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  className="form-input"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-subject">
+                  Subject
+                </label>
+                <select
+                  id="contact-subject"
+                  className="form-input form-select"
+                  required
+                >
+                  <option value="">Select a reason</option>
+                  <option value="collaboration">Collaboration / Partnership</option>
+                  <option value="sponsorship">Sponsorship</option>
+                  <option value="media">Media / Press</option>
+                  <option value="join">Joining Enactus MLNC</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-message">
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  className="form-input form-textarea"
+                  placeholder="Tell us about yourself and how you would like to connect..."
+                  rows={5}
+                  required
+                />
+              </div>
+              <button type="submit" className="form-submit-btn">
+                Send Message →
+              </button>
+            </form>
+            <p className="form-note">
+              Alternatively email us directly at{' '}
+              <a href="mailto:enactusmlnc@gmail.com" className="hover-text-primary">
+                enactusmlnc@gmail.com
+              </a>
+            </p>
+          </div>
+        </SectionContainer>
+      </section>
     </div>
   );
 }

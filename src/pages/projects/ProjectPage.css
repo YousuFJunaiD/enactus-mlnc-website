@@ -6,15 +6,16 @@
   text-align: center;
   background: rgba(247, 245, 241, 0.88);
   box-shadow: var(--shadow-sm);
-  transition: border 200ms ease, box-shadow var(--transition-base), transform var(--transition-base);
+  transition: border 200ms ease, box-shadow var(--transition-base), transform 200ms ease;
   min-width: 0;
   overflow: hidden;
 }
 
-.stat-box:hover {
-  border-top: 3px solid #F5A623;
-  box-shadow: var(--shadow-md);
-  transform: translateY(-0.2rem);
+@media (hover: hover) {
+  .stat-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
 }
 
 .stat-number {
@@ -160,6 +161,14 @@
   border-color: #F5A623;
 }
 
+@media (hover: hover) {
+  .gallery-img-placeholder:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(245, 166, 35, 0.15);
+    border-color: #F5A623;
+  }
+}
+
 .gallery-img-placeholder svg {
   color: #AAAAAA;
   flex-shrink: 0;
@@ -273,7 +282,8 @@
 
 @media (max-width: 48rem) {
   .image-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .gallery-placeholder-grid {
@@ -290,15 +300,18 @@
   }
 
   .sdg-badge {
-    width: 2.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .sdg-number {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .sdg-name {
     font-size: 0.38rem;
+    max-width: 38px;
+    line-height: 1.1;
   }
 
   .content-block h2 {
@@ -324,6 +337,76 @@
   }
 
   .image-gallery {
-    gap: clamp(0.5rem, 2vw, 1rem);
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
+
+  .sdg-badge {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .sdg-icons {
+    gap: 6px;
+  }
+}
+
+/* ========== BREADCRUMB ========== */
+.project-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.825rem;
+  font-family: var(--font-body);
+}
+
+.breadcrumb-link {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+@media (hover: hover) {
+  .breadcrumb-link:hover {
+    color: #F5A623;
+  }
+}
+
+.breadcrumb-sep {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.75rem;
+}
+
+.breadcrumb-current {
+  color: #F5A623;
+  font-weight: 600;
+}
+
+/* ========== PROJECT BULLET LIST ========== */
+.project-bullet-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-bullet-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444444;
+}
+
+.project-bullet-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary-yellow);
 }

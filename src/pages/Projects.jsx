@@ -25,14 +25,14 @@ export default function Projects() {
               to="/projects/desi"
               title="Project DESI"
               summary="Duty to Empathize, Sterilize, and Immunize. Aiming to eradicate canine rabies, eliminate starvation and reduce road accidents among stray dogs."
-              impactBadge="Rs. 2.2L Revenue | 2,200 Dogs Immunized"
+              impactBadge="₹2.2L Revenue · 2,200 Dogs Immunized"
               isLive={true}
             />
             <ProjectCard
               to="/projects/sneh"
               title="Project SNEH"
               summary="Offering sanitary alternatives to plastic and providing clean drinking water, while empowering underprivileged communities as micro-entrepreneurs."
-              impactBadge="Rs. 14.2L Revenue | First Int. Sale"
+              impactBadge="₹14.2L Revenue"
               isLive={true}
             />
             <ProjectCard
@@ -46,7 +46,7 @@ export default function Projects() {
               to="/projects/tissera"
               title="Project TISSERA"
               summary="Transforming textile waste into sustainable value-added products like recycled cotton bags, empowering women from underprivileged communities."
-              impactBadge="Rs. 35,000+ Revenue | Circular Economy"
+              impactBadge="₹35,000+"
               isLive={true}
             />
           </div>

@@ -9,3 +9,9 @@
   transform-origin: left;
   pointer-events: none;
 }
+
+@media (max-width: 48rem) {
+  .scroll-progress-bar {
+    height: 4px;
+  }
+}

@@ -12,6 +12,11 @@ export default function ProjectDesi() {
     <div className="project-detail-page">
       <section className="project-hero section-bg-dark">
         <div className="container max-w-800 mx-auto">
+          <div className="project-breadcrumb">
+            <a href="/projects" className="breadcrumb-link">Projects</a>
+            <span className="breadcrumb-sep">›</span>
+            <span className="breadcrumb-current">DESI</span>
+          </div>
           <span className="text-yellow font-bold uppercase tracking-wider">Since 2014</span>
           <h1 className="heading-xl mt-2">Project DESI</h1>
           <p className="project-hero-subtitle text-light">
@@ -31,8 +36,15 @@ export default function ProjectDesi() {
               "Eradicate canine rabies, eliminate starvation, reduce road accidents among stray dogs, and spread awareness among the masses."
             </h2>
             <p className="text-lg">
-              Started in 2014, Project DESI stands for the Duty to Empathize, Sterilize, and Immunize. We work systematically to improve the lives of community dogs while simultaneously creating sustainable income streams for local communities.
+              Started in 2014, Project DESI — Duty to Empathize, Sterilize, and Immunize — works to improve lives of community dogs while creating sustainable income for local communities.
             </p>
+            <ul className="project-bullet-list mt-3">
+              <li>Eradicating canine rabies through immunization drives</li>
+              <li>Eliminating starvation among stray dogs through Desi Rasoi</li>
+              <li>Reducing road accidents involving community dogs</li>
+              <li>Creating income for underprivileged women through BeDesi products</li>
+              <li>Spreading awareness about animal welfare across communities</li>
+            </ul>
           </div>
 
           <div className="content-block">

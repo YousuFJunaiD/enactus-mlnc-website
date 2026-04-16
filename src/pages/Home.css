@@ -234,11 +234,13 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .partners-ticker-track {
-    animation: tickerScroll 30s linear infinite;
+    animation: tickerScroll 35s linear infinite;
   }
 
-  .partners-ticker:hover .partners-ticker-track {
-    animation-play-state: paused;
+  @media (hover: hover) and (pointer: fine) {
+    .partners-ticker:hover .partners-ticker-track {
+      animation-play-state: paused;
+    }
   }
 }
 
@@ -249,7 +251,7 @@
 
 @media (max-width: 48rem) {
   .partners-ticker-track {
-    animation-duration: 20s;
+    animation-duration: 28s;
   }
 }
 
@@ -315,6 +317,7 @@
   .hero-section {
     min-height: auto;
     overflow-x: hidden;
+    padding-block: clamp(3rem, 10vw, 4rem);
   }
 
   .hero-container {
@@ -351,6 +354,29 @@
   .mentors-grid {
     grid-template-columns: 1fr;
   }
+
+  .impact-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .hero-cta {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-cta .btn,
+  .hero-cta a {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+@media (max-height: 600px) and (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding-block: 2rem;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -358,8 +384,9 @@
     width: 100%;
   }
 
-  .hero-cta .btn {
-    width: 100%;
+  .hero-cta .btn,
+  .hero-cta a {
+    max-width: 100%;
   }
 
   .hero-badge {
@@ -510,10 +537,12 @@
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 
-.department-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.15);
-  border-color: #F5A623;
+@media (hover: hover) {
+  .department-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(245, 166, 35, 0.15);
+    border-color: #F5A623;
+  }
 }
 
 .department-icon {
@@ -573,10 +602,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
+  font-size: clamp(0.65rem, 2vw, 0.8rem);
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+@media (hover: hover) {
+  .pyramid-bar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 166, 35, 0.35);
+  }
 }
 
 .pyramid-row:nth-child(1) .pyramid-bar {
@@ -623,7 +660,111 @@
   .pyramid-row:nth-child(5) .pyramid-bar { width: 100%; }
 
   .pyramid-bar {
-    height: 40px;
-    font-size: 0.62rem;
+    font-size: clamp(0.6rem, 2.5vw, 0.75rem);
+    height: clamp(2.75rem, 10vw, 3.5rem);
+    padding: 0 6px;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 30rem) {
+  .pyramid-bar {
+    font-size: 0.58rem;
+    height: 2.5rem;
+    letter-spacing: 0;
+  }
+}
+
+/* ========== HOW WE WORK ========== */
+.how-we-work-section {
+  background: var(--color-white);
+}
+
+.how-we-work-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.how-step {
+  padding: 2rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.how-step-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--color-primary-yellow);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.how-step-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  color: var(--color-primary-black);
+  margin-bottom: 0.75rem;
+}
+
+.how-step-desc {
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.7;
+}
+
+.how-step-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-primary-yellow);
+  font-weight: 700;
+  padding: 0 1rem;
+  padding-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .how-we-work-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .how-step-divider {
+    display: none;
+  }
+}
+
+/* ========== FINAL CTA ========== */
+.final-cta-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.final-cta-subtitle {
+  max-width: 52ch;
+  margin-inline: auto;
+  opacity: 0.85;
+}
+
+.final-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 48rem) {
+  .final-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .final-cta-buttons a,
+  .final-cta-buttons button {
+    width: 100%;
+    max-width: 280px;
   }
 }

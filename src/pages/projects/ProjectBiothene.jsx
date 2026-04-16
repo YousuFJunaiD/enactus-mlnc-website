@@ -11,6 +11,11 @@ export default function ProjectBiothene() {
     <div className="project-detail-page">
       <section className="project-hero section-bg-dark">
         <div className="container max-w-800 mx-auto">
+          <div className="project-breadcrumb">
+            <a href="/projects" className="breadcrumb-link">Projects</a>
+            <span className="breadcrumb-sep">›</span>
+            <span className="breadcrumb-current">BIOTHENE</span>
+          </div>
           <h1 className="heading-xl mt-2">Project BIOTHENE</h1>
           <p className="project-hero-subtitle text-light">
             100% biodegradable bags from cornstarch.
